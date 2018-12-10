@@ -13,14 +13,15 @@ public class LoginApp {
 	AndroidDriver  androidDriver = StartApp.driver;
 	
 	@Test
-	public void loginApp() {
+	public void loginApp() throws InterruptedException {
 		/*androidDriver.findElementById(LoginPage.USERNAME).sendKeys("15666666666");
 		androidDriver.findElementById(LoginPage.PASSWORD).sendKeys("123456");
 		androidDriver.findElementById(LoginPage.LOGIN).click();*/
 		
-		androidDriver.findElement(By.id(LoginPage.USERNAME)).sendKeys("15666666666");
+		androidDriver.findElement(By.id(LoginPage.USERNAME)).sendKeys("15000000000");
 		androidDriver.findElement(By.id(LoginPage.PASSWORD)).sendKeys("123456");
 		androidDriver.findElement(By.id(LoginPage.LOGIN)).click();
+		Thread.sleep(15000);
 	}
 	
 	

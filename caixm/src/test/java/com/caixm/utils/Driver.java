@@ -34,7 +34,7 @@ public class Driver {
 	       capabilities.setCapability("platformVersion","6.0.1"); 
 	       
 	       capabilities.setCapability("appPackage", "com.zhiyi.cxm.caixm_dev");  
-	       capabilities.setCapability("appActivity", "com.zhiyi.cxm.caixm.LoadingADActivity");  
+	       capabilities.setCapability("appActivity", "com.zhiyi.cxm.caixm.login.LoadingADActivity");  
 	       capabilities.setCapability("sessionOverride", true);
 	       capabilities.setCapability("unicodeKeyboard", true);
 	       capabilities.setCapability("resetKeyboard", false);

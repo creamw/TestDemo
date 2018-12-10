@@ -24,15 +24,17 @@ public class StartApp {
 	public void a_boot() throws MalformedURLException, InterruptedException{
        DesiredCapabilities capabilities = new DesiredCapabilities();  
        //capabilities.setCapability("udid", "192.168.1.145:5555");
-       capabilities.setCapability("deviceName","nubia Z11"); 
-     //capabilities.setCapability("deviceName", "test_device");
-     //capabilities.setCapability("deviceName", "test_device");
+       //capabilities.setCapability("clearSystemFiles", true);
+       capabilities.setCapability("deviceName","EA07HD14E075"); 
+       //capabilities.setCapability("deviceName", "test_device");
+       //capabilities.setCapability("deviceName", "test_device");
        capabilities.setCapability("automationName","Appium");  
        capabilities.setCapability("platformName","Android");  
        capabilities.setCapability("platformVersion","6.0.1"); 
        
        capabilities.setCapability("appPackage", "com.zhiyi.cxm.caixm_dev");  
-       capabilities.setCapability("appActivity", "com.zhiyi.cxm.caixm.LoadingADActivity");  
+       //capabilities.setCapability("appActivity", "com.zhiyi.cxm.caixm.login.LoadingADActivity");
+       capabilities.setCapability("appActivity", "cn.caixm.stall.login.MainActivity");
        capabilities.setCapability("sessionOverride", true);
        capabilities.setCapability("unicodeKeyboard", true);
        capabilities.setCapability("resetKeyboard", false);

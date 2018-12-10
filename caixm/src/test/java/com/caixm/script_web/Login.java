@@ -14,7 +14,7 @@ public class Login {
 	public void login() {
 		chromeDriver.manage().window().maximize();
 		chromeDriver.get("https://dev.api.caixm.cn/");
-		chromeDriver.findElement(By.cssSelector(LoginPage.USERNAME)).sendKeys("15666666666");
+		chromeDriver.findElement(By.cssSelector(LoginPage.USERNAME)).sendKeys("15000000000");
 		chromeDriver.findElement(By.cssSelector(LoginPage.PASSWORD)).sendKeys("123456");
 		chromeDriver.findElement(By.cssSelector(LoginPage.LOGIN)).click();
 		//chromeDriver.findElementByXPath(LoginPage.LOGIN).click();
