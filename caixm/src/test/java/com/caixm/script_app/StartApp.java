@@ -34,7 +34,8 @@ public class StartApp {
        
        capabilities.setCapability("appPackage", "com.zhiyi.cxm.caixm_dev");  
        //capabilities.setCapability("appActivity", "com.zhiyi.cxm.caixm.login.LoadingADActivity");
-       capabilities.setCapability("appActivity", "cn.caixm.stall.login.MainActivity");
+       //capabilities.setCapability("appActivity", "cn.caixm.stall.login.MainActivity");
+       capabilities.setCapability("appActivity", "com.caixm.app_2p_stall.activity.MainActivity");
        capabilities.setCapability("sessionOverride", true);
        capabilities.setCapability("unicodeKeyboard", true);
        capabilities.setCapability("resetKeyboard", false);

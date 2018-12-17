@@ -42,6 +42,8 @@ public class WorkPlatformCase {
 		startApp.a_boot();
 		new LoginApp().loginApp();
 		new CashStatistics().handBill();
+		new Robot().keyPress(java.awt.event.KeyEvent.VK_F5);
+		Thread.sleep(1000);
 		String[] str = checkDate();
 		
 		
@@ -59,7 +61,8 @@ public class WorkPlatformCase {
 		new CashHome().c_patchGoods();
 		new OrderCenter().repay();
 		
-		
+		//注意获取浏览器窗口焦点，否则此方法对浏览器的刷新操作会失效
+		chromeDriver.navigate().refresh();
 		new Robot().keyPress(java.awt.event.KeyEvent.VK_F5);
 		Thread.sleep(2000);
 		String[] str_latest = checkDate();

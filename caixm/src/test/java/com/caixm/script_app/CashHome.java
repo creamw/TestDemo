@@ -1,10 +1,14 @@
 package com.caixm.script_app;
 
+import java.io.IOException;
+
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebElement;
 
 import com.caixm.elements.mobile.CashHomePage;
 
@@ -25,11 +29,15 @@ public class CashHome {
 	 * 力资：5.97
 	 * 票费：1
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test
-	public void a_packageOrder() throws InterruptedException {
+	public void a_packageOrder() throws InterruptedException, IOException {
 		androidDriver.findElement(By.xpath(CashHomePage.CASHHOMEBUTTOM)).click();
-		androidDriver.findElement(By.xpath(CashHomePage.FIRSTTRUCK)).click();
+		//androidDriver.findElement(By.xpath(CashHomePage.FIRSTTRUCK)).click();
+		WebElement firsttruck = androidDriver.findElement(By.xpath(CashHomePage.FIRSTTRUCK));
+		Point point = firsttruck.getLocation();
+		Runtime.getRuntime().exec("adb shell input tap "+point.x+" "+point.y);
 		androidDriver.findElement(By.xpath(CashHomePage.FIRSTMENU)).click();
 		
 		androidDriver.findElement(By.xpath(CashHomePage.NUMBERPACKAGE)).click();
@@ -121,4 +129,6 @@ public class CashHome {
 		str = new String[]{"17.56","2","12","2","1.56","17.56","15","16.44","9999","0"};
 		str_contents = new String[] {"档口今日收益","开票费","力资费","灌包费","货款零差收益","档口N月累计收益","历史赊欠","档口今日销售货款","今日历史还款","在售车次"};
 	}
+	
+	
 }

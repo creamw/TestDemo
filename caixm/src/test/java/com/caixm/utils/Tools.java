@@ -11,6 +11,7 @@ import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebDriver.Navigation;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.CommandExecutor;
@@ -41,9 +42,15 @@ public class Tools {
 				"C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe");
 		ChromeDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("https://dev.api.caixm.cn/");
+		driver.get("https://www.baidu.com/");
 		driver.manage().window().maximize();
-		driver.findElement(By.cssSelector("#username")).sendKeys("15666666666");
+		while(1==1) {
+			Thread.sleep(1000);
+			Navigation navigate = driver.navigate();
+			
+		}
+		
+		/*driver.findElement(By.cssSelector("#username")).sendKeys("15666666666");
 		driver.findElement(By.cssSelector("#password")).sendKeys("123456");
 		driver.findElement(By.cssSelector(LoginPage.LOGIN)).click();
 		driver.findElement(By.xpath(SaleDataPage.SALEDATABUTTON)).click();
@@ -68,7 +75,7 @@ public class Tools {
 		
 		System.out.println(serial+time+buyer+casher+money+state);
 		Thread.sleep(4000);
-		driver.quit();
+		driver.quit();*/
 		
 	}
 	
@@ -98,7 +105,7 @@ public class Tools {
 		
 	}
 	
-	//@Test
+	@Test
 	public void run() throws IOException, InterruptedException {
 		//String string = "2018-11-26 14:45:21".substring(0, 16);
 		//CommandExecutor executor = androidDriver.getCommandExecutor();
@@ -110,12 +117,13 @@ public class Tools {
 			 Thread.sleep(4000);
 			 rt.exec("adb shell input tap 500 500");
 			 //back
-			 Thread.sleep(8000);
+			 Thread.sleep(10000);
 			 rt.exec("adb shell input swipe 500 1600 500 200 2000");
 			 Thread.sleep(4000);
 			 rt.exec("adb shell input keyevent 4");
 			 Thread.sleep(2000);
 			 rt.exec("adb shell input swipe 500 1200 500 500 2000");
+			 //4053
 		 }
 		 
 	}
